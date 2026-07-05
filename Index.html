@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Legacy Tracker</title>
+<meta name="description" content="Legacy Tracker — family asset management" />
+<link rel="canonical" href="https://legacytracker.com/" />
+<style>
+  /* Full-bleed, no scrollbars on the wrapper itself — the iframe fills the
+     entire viewport and the app inside handles its own internal scrolling. */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #0f2740; /* matches the app's login gradient so there's no flash */
+  }
+  #app-frame {
+    display: block;
+    border: 0;
+    width: 100vw;
+    /* 100dvh (dynamic viewport height) accounts for mobile browser address
+       bars correctly; 100vh is the fallback for older browsers. */
+    height: 100vh;
+    height: 100dvh;
+  }
+</style>
+</head>
+<body>
+  <!--
+    Replace YOUR_DEPLOYMENT_ID_HERE with your actual Apps Script Web App
+    deployment ID (the long string in your /exec URL, right after /macros/s/
+    and before /exec). Get it from: Apps Script editor → Deploy → Manage
+    deployments → copy the "Web app URL".
+  -->
+  <iframe
+    id="app-frame"
+    src="https://script.google.com/macros/s/AKfycbwlqX4m5yGzR534Q1yxIyBK_nBTAy83Qt9oH5bx43RbmDhfuw4YXi-AQCkgDzpno31tjw/exec"
+    allow="clipboard-write"
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</body>
+</html>
