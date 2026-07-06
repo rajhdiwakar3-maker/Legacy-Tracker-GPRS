@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Legacy Tracker</title>
 <meta name="description" content="Legacy Tracker — family asset management" />
-<link rel="canonical" href="https://legacytracker.com/" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#1a3a5c" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
 <style>
   /* Full-bleed, no scrollbars on the wrapper itself — the iframe fills the
      entire viewport and the app inside handles its own internal scrolling. */
@@ -40,5 +43,12 @@
     allow="clipboard-write"
     referrerpolicy="strict-origin-when-cross-origin">
   </iframe>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').catch(function(e){ /* non-fatal */ });
+      });
+    }
+  </script>
 </body>
 </html>
